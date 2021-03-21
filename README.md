@@ -4,7 +4,7 @@
 
 Authors: Longhui Yin
 
-Repo: 
+Repo: https://github.com/EloviGit/sudoku.git
 
 
 
