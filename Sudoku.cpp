@@ -198,6 +198,12 @@ bool Sudoku::thirdSolve() {
 			}
 
 			for (int number = 1; number <= 9; number++) {
+				if ((intersectCells[0]->isFilled() && intersectCells[0]->getValue() == number) ||
+					(intersectCells[1]->isFilled() && intersectCells[1]->getValue() == number) ||
+					(intersectCells[2]->isFilled() && intersectCells[2]->getValue() == number)) {
+					continue;
+				}
+
 				if (intersectionCellsChoice.has(number) && !otherCellsOfTheBlockChoice.has(number)) {
 					for (int i = 0; i < 6; i++) {
 						progress = progress || otherCellsOfTheRow[i]->choice.eliminate(number);
@@ -255,6 +261,12 @@ bool Sudoku::thirdSolve() {
 			}
 
 			for (int number = 1; number <= 9; number++) {
+				if ((intersectCells[0]->isFilled() && intersectCells[0]->getValue() == number) ||
+					(intersectCells[1]->isFilled() && intersectCells[1]->getValue() == number) ||
+					(intersectCells[2]->isFilled() && intersectCells[2]->getValue() == number)) {
+					continue;
+				}
+
 				if (intersectionCellsChoice.has(number) && !otherCellsOfTheBlockChoice.has(number)) {
 					for (int i = 0; i < 6; i++) {
 						progress = progress || otherCellsOfTheCol[i]->choice.eliminate(number);
