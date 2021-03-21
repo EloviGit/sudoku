@@ -306,6 +306,59 @@ std::string Sudoku::toString(int mode) {
 			}
 		}
 		break;
+	case 1:
+		s << "+---------------+---------------+---------------+";
+		s << std::endl;
+		for (int row = 0; row < 9; row++) {
+			s << "|";
+			for (int col = 0; col < 9; col++) {
+				if (data[row][col] != 0) {
+					s << cells[row][col].toString();
+				}
+				else if (cells[row][col].isFilled()){
+					s << "\033[1;31;40m";
+					s << cells[row][col].toString();
+					s << "\033[0m";
+				}
+				else {
+					s << "\033[1;32;40m";
+					s << cells[row][col].toString();
+					s << "\033[0m";
+				}
+				if (col % 3 == 2) {
+					s << "|";
+				}
+			}
+			s << std::endl;
+			if (row % 3 == 2) {
+				s << "+---------------+---------------+---------------+";
+				s << std::endl;
+			}
+		}
+		break;
+	case 2:
+		s << "+---------------+---------------+---------------+";
+		s << std::endl;
+		for (int row = 0; row < 9; row++) {
+			s << "|";
+			for (int col = 0; col < 9; col++) {
+				if (data[row][col] != 0) {
+					s << cells[row][col].toString();
+				}
+				else {
+					s << "     ";
+				}
+				if (col % 3 == 2) {
+					s << "|";
+				}
+			}
+			s << std::endl;
+			if (row % 3 == 2) {
+				s << "+---------------+---------------+---------------+";
+				s << std::endl;
+			}
+		}
+		break;
 	default:
 		s << "ERROR STRING MODE";
 		break;

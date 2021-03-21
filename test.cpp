@@ -30,7 +30,7 @@ void test_sudoku_sub(int inputdata[9][9]) {
 	Sudoku sudoku(inputdata);
 	if (sudoku.isValid()) {
 		std::cout << "BEFORE:" << std::endl;
-		std::cout << sudoku.toString();
+		std::cout << sudoku.toString(2);
 		int round = sudoku.solve();
 		std::cout << "AFTER:" << std::endl;
 		if (round > 0) {

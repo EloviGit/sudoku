@@ -47,7 +47,7 @@ public:
 	*/
 	bool thirdSolve();
 
-	std::string toString(int mode = 0);
+	std::string toString(int mode = 1);
 
 	bool isValid();
 
